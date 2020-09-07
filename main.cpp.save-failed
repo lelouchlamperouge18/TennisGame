@@ -1,0 +1,62 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+int k = -1;
+string a[50]={};
+void readFile()
+{
+    ifstream inFile;
+    inFile.open("tennis.txt");
+    if (inFile.fail()) {
+        cerr << "Error opeing a file" << endl;
+        inFile.close();
+    }
+    string line;
+    while (getline(inFile, line))
+    {
+        k++;
+        a[k] = line;
+    }
+    inFile.close();
+}
+int main(){
+    readFile();
+    //print array
+    for (int i=0;i<=k;i++){
+        cout << "hello 1: " << a[i] << endl;
+    }
+    string m = "";
+    string n= "";
+    string result = "Game Start";
+    cout << result << endl;
+    for (int i=0;i<=k;i++){
+        if (result == "Game Start"){
+            if (a[i]=='1') m = '15';
+            if (a[i]=='2') n = '15';
+        } else
+        {
+            if (a[i]=='1' && m=='15') m = '30';
+            if (a[i]=='1' && m=='30') m = '40';
+            if (a[i]=='1' && m=='40') m = '';
+            if (a[i]=='2' && n=='15') n = '30';
+            if (a[i]=='2' && n=='30') n = '40';
+            if (a[i]=='2' && m=='40') n = '';
+        }
+        if (m==n) result = m + '-love';
+        if (m!=n) result = m + '-' n;
+        if (m=="") result = "Game Player 1";
+        if (n=="") result = "Game Player 2";
+        cout << result;
+        if (result=="Game Player 1"&&result=="Game Player 2"){
+            result = "Game Start";
+            if (i<k) cout << result;
+        }
+    }
+    return 0;
+}
+
+
+
+
+

@@ -3,13 +3,13 @@
 
 using namespace std;
 int k = -1;
-string a[50]={};
+string a[100]={};
 void readFile()
 {
     ifstream inFile;
     inFile.open("tennis.txt");
     if (inFile.fail()) {
-        cerr << "Error opeing a file" << endl;
+        cout << "Error!" << endl;
         inFile.close();
     }
     string line;
@@ -22,10 +22,6 @@ void readFile()
 }
 int main(){
     readFile();
-    //print array
-    for (int i=0;i<=k;i++){
-        cout << "hello 1: " << a[i] << endl;
-    }
     string m("0");
     string n("0");
     string result = "Game Start";

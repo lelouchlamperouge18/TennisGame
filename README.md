@@ -7,11 +7,13 @@ This problem will only involve scoring a single game not a match or a set. A ten
 A player wins a tennis game by being the first player to win four points but must win by two. There are no tiebreakers in games. The clever
 encoding of tennis scores comes at the point level. The following table describes the different names
 for tennis points:
+
 Number of Points Won Name of Score
 0                        love
 1                         15
 2                         30
 3                         40
+
 Tennis scores are usually separated by a dash with the server’s score first, and in this problem player 1
 will always be serving. Some example scores are 15-30 and 40-love. When the score is tied, tennis does
 things a little differently. Tie scores of 15-15 and 30-30 are called "15-all" and "30-all" respectively.
